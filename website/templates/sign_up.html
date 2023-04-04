@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %} Reģistrēties {% endblock %}
+
+{% block content %}
+<div class="auth-bg">
+    <form class="auth-div" method="post">
+        <h2>Reģistrēšanās</h2>
+        <br>
+        <div class="auth-input">
+            <input type="text" id="first_name" name="first_name" placeholder="Vārds">
+            <input type="text" id="last_name" name="last_name" placeholder="Uzvārdu">
+            <input type="text" id="username" name="username" placeholder="Lietotājvārds">
+            <input type="password" id="password1" name="password1" placeholder="Parole">
+            <input type="password" id="password2" name="password2" placeholder="Parole (velreiz)">
+        </div>
+        <br>
+        <button type="submit"> Reģistrēties </button>
+    </form>
+</div>
+{% endblock %}

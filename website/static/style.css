@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER */
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: gray;
+    background-image: url("/static/images/hmm.jpg");
+}
+
+header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around; */
+}
+
+header ul a {
+    margin-right: 20px;
+    color: white;
+}
+
+#brand {
+    margin-left: 20px;
+    /* size: 5vh; */
+}
+
+#brand a {
+    color: green;
+}
+
+
+
+/* SIGN UP */
+.auth-bg {
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.auth-div {
+    background-color: rgb(85, 85, 85);
+    display: grid;
+	place-items: center;
+    padding: 40px;
+
+    /* align-items: center; */
+    /* height:100%; */
+    /* flex: 1 1 auto; */
+    /* margin:0 auto; */
+    /* display:block; */
+}
+
+
+.auth-div input {
+    display: block;
+    margin-top: 5px;
+}
+
+.alert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+/* #first_name {
+    color: violet; */
+    /* background-color: aqua; */
+/* } */
