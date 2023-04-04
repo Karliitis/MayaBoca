@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='style.css') }}">
+    <!-- Poppins - sans-serif -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <div id="brand"><a href="/">MayaBoca</a></div>
+        <nav>
+            <ul>
+              <li><a href="/">Sākums</a></li>
+              {% if user.is_authenticated %}
+              <li><a href="/logout">Iziet</a></li>
+              {% else %}
+              <li><a href="/login">Pieslēgties</a></li>
+              <li><a href="/sign-up">Reģistrēties</a></li>
+              {% endif %}
+            </ul>
+        </nav>
+        
+    </header>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+        {% if category == "error" %}
+        <div class="alert" style="background-color: rgb(148, 0, 0)" role="alert">
+            {{ message }}
+            <!-- <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+            </button> -->
+        </div>
+        {% else %}
+        <div class="alert" style="background-color: rgb(0, 255, 76)" role="alert">
+            {{ message }}
+            <!-- <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+            </button> -->
+        </div>
+        {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+</body>
+</html>
