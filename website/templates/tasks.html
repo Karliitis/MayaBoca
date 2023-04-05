@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %} Uzdevumi {% endblock %}
+
+{% block content %}
+<h2>Uzdevumi</h2>
+<form method="post" class="task-grid">
+    {% for task in user.tasks %}
+    <div class="task">
+        <input type="submit" name="task-select" value="{{ task.name }}">
+    </div>
+    {% endfor %}
+    <!-- <ul class="tasks">
+        {% for task in user.tasks %}
+        <select name="task-select" id="">
+            <option value="{{ task.name }}">{{ task.name }}</option>
+        </select>
+        <li>
+            <input type="submit" name="task-select" value="{{ task.name }}">
+        </li>
+        {% endfor %}
+        <li>+ Izveidot</li>
+    </ul> -->
+</form>
+
+<script>
+    if ( window.history.replaceState ) {
+      window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+{% endblock %}
