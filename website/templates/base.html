@@ -18,6 +18,8 @@
             <ul>
               <li><a href="/">Sākums</a></li>
               {% if user.is_authenticated %}
+              <li><a href="/tasks">Uzdevumi</a></li>
+              <li><a href="/create-task">Izveidot uzdevumu</a></li>
               <li><a href="/logout">Iziet</a></li>
               {% else %}
               <li><a href="/login">Pieslēgties</a></li>
