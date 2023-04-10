@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} Jauns uzdevums {% endblock %}
+
+{% block content %}
+<div class="new-task-bg">
+    <form method="post" class="new-task-form" autocomplete="off">
+        <h2>Jauns uzdevums</h2>
+        <br>
+        <input type="text" id="name" name="name" placeholder="Nosaukums">
+        <br>
+        <button type="submit">Izveidot</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %} Jauns jautājums {% endblock %}
+
+{% block content %}
+<div class="new-question-bg">
+    <form method="post" class="new-question-form" autocomplete="off">
+        <h2 style="color:white">Jautājums</h2>
+        <br>
+        <input type="text" id="question" name="question" placeholder="Jautājums" value="{{ question.question }}">
+        <!-- <br>
+        <input type="text" id="name" name="name" placeholder="Nosaukums"> -->
+        <br>
+        <button type="submit">Saglabāt</button>
+        {% for answer in question.answers %}
+        <div>
+            <p style="color:white">Atbilde: <input type="text" id="{{ answer.id }}" name="{{ answer.id }}" placeholder="Atbilde" value="{{ answer.answer }}"></p>
+        </div>
+        {% endfor %}
+        <!-- <div id="mathjax-output">
+            <input id="mathjax-input" type="text" onkeyup="updateMathJax()">
+        </div> -->
+    </form>
+</div>
+
+<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+    function updateMathJax() {
+        var input = document.getElementById("mathjax-input").value;
+        var output = document.getElementById("mathjax-output");
+        output.innerHTML = "\\(" + input + "\\)";
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub, output]);
+    }
+</script> -->
+
+{% endblock %}

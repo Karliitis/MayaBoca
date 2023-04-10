@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="auth-bg">
-    <form class="auth-div" method="post">
+    <form class="auth-div" id="sign-up-form" method="post">
         <h2>Reģistrēšanās</h2>
         <br>
         <div class="auth-input">
@@ -17,4 +17,27 @@
         <button type="submit"> Reģistrēties </button>
     </form>
 </div>
+
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"
+          integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+          crossorigin="anonymous"></script> -->
+
+<!-- <script type="text/javascript">
+    $(document).on('submit','#todo-form',function(e)
+                   {
+      console.log('hello');
+      e.preventDefault();
+      $.ajax({
+        type:'POST',
+        url:'/',
+        data:{
+          todo:$("#todo").val()
+        },
+        success:function()
+        {
+          alert('saved');
+        }
+      })
+    });
+  </script> -->
 {% endblock %}

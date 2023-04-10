@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
     <!-- Poppins - sans-serif -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    
     
     <title>{% block title %}{% endblock %}</title>
 </head>
@@ -19,7 +21,7 @@
               <li><a href="/">Sākums</a></li>
               {% if user.is_authenticated %}
               <li><a href="/tasks">Uzdevumi</a></li>
-              <li><a href="/create-task">Izveidot uzdevumu</a></li>
+              <li><a href="/new-task">Izveidot uzdevumu</a></li>
               <li><a href="/logout">Iziet</a></li>
               {% else %}
               <li><a href="/login">Pieslēgties</a></li>
