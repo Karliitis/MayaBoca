@@ -2,26 +2,22 @@
 {% block title %} Uzdevumi {% endblock %}
 
 {% block content %}
-<h2>Jautājumi</h2>
+
+<h2 style="color:white">Jautājumi</h2>
 <form method="post" class="question-grid">
     {% for question in task.questions %}
-    <div class="question">
-        <input type="submit" name="question-select" value="{{ question.question }}">
+    <div class="question-box">
+        <button class="question" type="submit" name="question" value="{{ question.id }}">
+            {{ question.question }}
+        </button>
+        <button type="button" class="delete-btn" onclick="deleteQuestion('{{ question.id }}')">&times;</button>
+        <!-- <input type="submit" name="question-select" value="{{ question.question }}"> -->
     </div>
     {% endfor %}
-    <!-- <ul class="tasks">
-        {% for task in user.tasks %}
-        <select name="task-select" id="">
-            <option value="{{ task.name }}">{{ task.name }}</option>
-        </select>
-        <li>
-            <input type="submit" name="task-select" value="{{ task.name }}">
-        </li>
-        {% endfor %}
-        <li>+ Izveidot</li>
-    </ul> -->
+    <div class="question-box">
+        <button class="question" type="submit" name="add-question" value="add-qustion"> + Pievienot jautājumu </button>
+    </div>
 </form>
-
 
 <script>
     if ( window.history.replaceState ) {

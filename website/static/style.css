@@ -8,7 +8,7 @@ body {
     font-family: "Poppins", sans-serif;
     background-color: gray;
     background-image: url("/static/images/hmm.jpg");
-    background-size: 500px;
+    background-size: cover;
 }
 
 header {
@@ -90,12 +90,12 @@ header ul a {
     margin: 20px;
 }
 
-.task {
+.task-box {
     height: 100px;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.task input {
+.task-box .task {
     color: white;
     font-size: 20px;
     background-color: transparent;
@@ -112,12 +112,12 @@ header ul a {
     margin: 20px;
 }
 
-.question {
+.question-box {
     height: 100px;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.question input {
+.question-box .question {
     color: white;
     font-size: 20px;
     background-color: transparent;
@@ -125,6 +125,26 @@ header ul a {
     height: 100%;
     border: none;
     cursor: pointer;
+}
+
+/* NEW TASK */
+.new-task-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.new-task-form {
+    background-color: rgb(85, 85, 85);
+    display: grid;
+	place-items: center;
+    padding: 40px;
+}
+
+.new-task-form input {
+    display: block;
+    margin-top: 5px;
 }
 
 /* .tasks {
