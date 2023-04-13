@@ -11,11 +11,17 @@
         <input type="text" id="name" name="name" placeholder="Nosaukums"> -->
         <br>
         <button type="submit">Saglabāt</button>
-        {% for answer in question.answers %}
-        <div>
-            <p style="color:white">Atbilde: <input type="text" id="{{ answer.id }}" name="{{ answer.id }}" placeholder="Atbilde" value="{{ answer.answer }}"></p>
+        <div id="answers">
+            {% for answer in question.answers %}
+            <div class="answer" id="div{{ answer.id }}" style="color:white">
+                <h5>Atbilde: </h5>
+                <input type="text" id="input{{ answer.id }}" name="{{ answer.id }}" placeholder="Atbilde" value="{{ answer.answer }}">
+                <button type="button" onclick="deleteAnswer('{{ answer.id }}')">-</button>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
+        <button type="button" onclick="addAnswer()">+</button>
+        
         <!-- <div id="mathjax-output">
             <input id="mathjax-input" type="text" onkeyup="updateMathJax()">
         </div> -->

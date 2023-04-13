@@ -72,8 +72,9 @@ def question():
                     continue
                 answer.answer = answer_name
             else:
-                answer = Answer(answer=answer_name, question_id=question_id)
-                db.session.add(answer)
+                print(_id)
+                # answer = Answer(answer=answer_name, question_id=question_id)
+                # db.session.add(answer)
         db.session.commit()
 
         if len(question_name) < 1:
@@ -127,3 +128,25 @@ def delete_question():
         db.session.commit()
 
     return jsonify({})
+
+@views.route("/delete-answer", methods=["POST"])
+def delete_answer():
+    answer = json.loads(request.data)
+    answer_id = answer["answerId"]
+    answer = Answer.query.get(answer_id)
+    if answer:
+        db.session.delete(answer)
+        db.session.commit()
+        print("deleted")
+    return jsonify({})
+
+@views.route("/add-answer", methods=["GET", "POST"])
+def add_answer():
+    question = json.loads(request.data)
+    # question = Question.query.get(question)
+    answer = Answer(answer="", question_id=question["questionId"])
+    db.session.add(answer)
+    db.session.commit()
+    print(answer.id)
+    return {"answerId": answer.id}
+    
